@@ -1,0 +1,11 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: spring-cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: file://C:/Users/BS-308/Documents/personal/Java/MicroService/DemoMicroServices/git-config-repo

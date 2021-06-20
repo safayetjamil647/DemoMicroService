@@ -1,0 +1,19 @@
+#limit-service:
+#  minimum: 100
+#  maximum: 10000
+
+#spring:
+#  cloud:
+#    config:
+#      enabled: false
+
+spring:
+  profiles:
+    active: dev
+  cloud:
+    config:
+      profile: dev
+  application:
+    name: limit-service
+  config:
+    import: configserver:http://localhost:8888
