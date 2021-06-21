@@ -6,19 +6,18 @@
         <artifactId>DemoMicroServices</artifactId>
         <groupId>com.dipanjal.example.microservices</groupId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
-
-    <artifactId>ConfigServer</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>ConfigServer</name>
     <modelVersion>4.0.0</modelVersion>
-    <description>Centralized Configuration Server</description>
+
+    <artifactId>CommonModule</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>CommonModule</name>
+    <description>A Common Module for Micro Services</description>
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-server</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -41,6 +40,15 @@
                 <version>3.8.1</version>
                 <configuration>
                     <release>11</release>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+                <configuration>
+                    <skipTests>true</skipTests>
                 </configuration>
             </plugin>
         </plugins>

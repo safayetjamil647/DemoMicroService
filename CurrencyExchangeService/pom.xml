@@ -8,12 +8,12 @@
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-
-    <artifactId>LimitService</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>LimitService</name>
     <modelVersion>4.0.0</modelVersion>
-    <description>A MicroService for Limit Service</description>
+
+    <artifactId>CurrencyExchangeService</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>CurrencyExchangeService</name>
+    <description>A MicroService for Currency Exchange</description>
 
     <dependencies>
         <dependency>
@@ -33,7 +33,6 @@
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -45,12 +44,20 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+
+        <dependency>
+            <groupId>com.dipanjal.example.microservices</groupId>
+            <artifactId>CommonModule</artifactId>
+        </dependency>
+<!--        <dependency>
+            <groupId>com.dipanjal.htmlunit</groupId>
+            <artifactId>HtmlunitScrapper</artifactId>
+        </dependency>-->
     </dependencies>
 
     <build>
