@@ -54,10 +54,10 @@
             <groupId>com.dipanjal.example.microservices</groupId>
             <artifactId>CommonModule</artifactId>
         </dependency>
-<!--        <dependency>
+        <dependency>
             <groupId>com.dipanjal.htmlunit</groupId>
             <artifactId>HtmlunitScrapper</artifactId>
-        </dependency>-->
+        </dependency>
     </dependencies>
 
     <build>

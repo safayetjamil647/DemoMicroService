@@ -66,11 +66,11 @@
 				<artifactId>CommonModule</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
-			<!--<dependency>
+			<dependency>
 				<groupId>com.dipanjal.htmlunit</groupId>
 				<artifactId>HtmlunitScrapper</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
-			</dependency>-->
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
