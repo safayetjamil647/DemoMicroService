@@ -26,7 +26,7 @@ public class CurrencyExchangeServiceScrap implements CurrencyExchangeService {
             );
             return new CurrencyExchange(1L, from, to, exchangeValue);
         }catch (IOException e){
-            throw new CurrencyExchangeException("Scrapping Server Exception", e);
+            throw new CurrencyExchangeException(e.getMessage(), e);
         }
     }
 }
