@@ -6,14 +6,18 @@
         <artifactId>DemoMicroServices</artifactId>
         <groupId>com.dipanjal.example.microservices</groupId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>CurrencyExchangeService</artifactId>
+    <artifactId>CurrencyConversionService</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>CurrencyExchangeService</name>
-    <description>A MicroService for Currency Exchange</description>
+    <name>CurrencyConversionService</name>
+    <description>A MicroService for Currency Conversion</description>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -21,17 +25,21 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -54,10 +62,6 @@
             <groupId>com.dipanjal.example.microservices</groupId>
             <artifactId>CommonModule</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.dipanjal.htmlunit</groupId>
-            <artifactId>HtmlunitScrapper</artifactId>
-        </dependency>
     </dependencies>
 
     <build>
@@ -76,6 +80,10 @@
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>

@@ -8,7 +8,8 @@
 		<module>LimitService</module>
         <module>ConfigServer</module>
         <module>CurrencyExchangeService</module>
-	</modules>
+        <module>CurrencyConversionService</module>
+    </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
