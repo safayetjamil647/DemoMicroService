@@ -1,4 +1,4 @@
-package com.dipanjal.example.microservices.CurrencyExchangeService.model;
+package com.dipanjal.example.microservices.common.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,4 +19,5 @@ public class CurrencyExchange {
     private String from;
     private String to;
     private BigDecimal conversionMultiple;
+    private String environment;
 }

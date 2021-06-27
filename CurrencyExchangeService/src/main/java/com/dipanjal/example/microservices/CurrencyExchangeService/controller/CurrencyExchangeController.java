@@ -2,7 +2,7 @@ package com.dipanjal.example.microservices.CurrencyExchangeService.controller;
 
 import com.dipanjal.example.microservices.CurrencyExchangeService.exception.CurrencyExchangeException;
 import com.dipanjal.example.microservices.CurrencyExchangeService.factory.CurrencyExchangeServiceFactory;
-import com.dipanjal.example.microservices.CurrencyExchangeService.model.CurrencyExchange;
+import com.dipanjal.example.microservices.common.models.CurrencyExchange;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +25,4 @@ public class CurrencyExchangeController {
                                                                   @PathVariable final String to) throws CurrencyExchangeException {
         return ResponseEntity.ok(factory.getService().fetchValue(from, to));
     }
-
-
 }

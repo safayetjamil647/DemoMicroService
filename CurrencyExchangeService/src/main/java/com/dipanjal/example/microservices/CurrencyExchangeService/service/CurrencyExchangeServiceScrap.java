@@ -1,8 +1,8 @@
 package com.dipanjal.example.microservices.CurrencyExchangeService.service;
 
 import com.dipanjal.example.microservices.CurrencyExchangeService.exception.CurrencyExchangeException;
-import com.dipanjal.example.microservices.CurrencyExchangeService.model.CurrencyExchange;
 import com.dipanjal.example.microservices.CurrencyExchangeService.props.CurrencyExchangeProps;
+import com.dipanjal.example.microservices.common.models.CurrencyExchange;
 import com.dipanjal.htmlunit.service.scrapper.ifaces.CurrencyExchangeScrapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 
 @Service("currencyExchangeServiceScrap")
 @RequiredArgsConstructor
-public class CurrencyExchangeServiceScrap implements CurrencyExchangeService {
+public class CurrencyExchangeServiceScrap extends BaseService implements CurrencyExchangeService {
 
     private final CurrencyExchangeScrapper<BigDecimal> currencyExchangeScrapper;
     private final CurrencyExchangeProps props;
@@ -24,7 +24,7 @@ public class CurrencyExchangeServiceScrap implements CurrencyExchangeService {
                     String.format(props.getApi().getUrl(), from, to),
                     BigDecimal::new
             );
-            return new CurrencyExchange(1L, from, to, exchangeValue);
+            return new CurrencyExchange(1L, from, to, exchangeValue, getLocalServerPort());
         }catch (IOException e){
             throw new CurrencyExchangeException(e.getMessage(), e);
         }
