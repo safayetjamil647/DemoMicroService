@@ -9,7 +9,8 @@
         <module>ConfigServer</module>
         <module>CurrencyExchangeService</module>
         <module>CurrencyConversionService</module>
-    </modules>
+		<module>NamingServer</module>
+	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
