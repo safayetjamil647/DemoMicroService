@@ -7,10 +7,10 @@ spring:
   cloud:
     config:
       profile: default
-    gateway:
-      discovery:
-        locator:
-          enabled: true
+#    gateway:
+#      discovery:
+#        locator:
+#          enabled: true
 #          lower-case-service-id: true # to make the discovery service names identified in lower-case
   application:
     name: api-gateway
