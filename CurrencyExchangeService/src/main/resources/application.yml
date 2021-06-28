@@ -19,3 +19,27 @@ eureka:
   instance:
     preferIpAddress: true
     lease-expiration-duration-in-seconds: 30
+
+resilience4j:
+  retry:
+    instances:
+      retryService:
+        maxRetryAttempts: 5
+        waitDuration: 1s
+        enableExponentialBackoff: true
+
+  circuitbreaker:
+    instances:
+      retryServiceA:
+          registerHealthIndicator: true
+          slidingWindowSize: 100
+      retryServiceB:
+        registerHealthIndicator: true
+        slidingWindowSize: 10
+        permittedNumberOfCallsInHalfOpenState: 3
+        slidingWindowType: TIME_BASED
+        minimumNumberOfCalls: 20
+        waitDurationInOpenState: 50s
+        failureRateThreshold: 50
+        eventConsumerBufferSize: 10
+#        recordFailurePredicate: io.github.robwin.exception.RecordFailurePredicate
