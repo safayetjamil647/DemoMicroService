@@ -1,0 +1,42 @@
+server:
+  port: 8200
+
+spring:
+  profiles:
+    active: dev
+  cloud:
+    config:
+      profile: default
+  application:
+    name: geo-location
+  config:
+    import: optional:configserver:http://localhost:8888
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
+    lease-expiration-duration-in-seconds: 30
+
+resilience4j:
+  retry:
+    instances:
+      retryService:
+        maxRetryAttempts: 5
+        waitDuration: 1s
+        enableExponentialBackoff: true
+
+  circuitbreaker:
+    instances:
+      geoService:
+        registerHealthIndicator: true
+        slidingWindowSize: 10
+        permittedNumberOfCallsInHalfOpenState: 3
+        slidingWindowType: TIME_BASED
+        minimumNumberOfCalls: 20
+        waitDurationInOpenState: 50s
+        failureRateThreshold: 50
+        eventConsumerBufferSize: 10
+#        recordFailurePredicate: io.github.robwin.exception.RecordFailurePredicate

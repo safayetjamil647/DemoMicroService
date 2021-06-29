@@ -3,7 +3,6 @@ package com.dipanjal.example.microservices.CurrencyExchangeService.controller;
 import com.dipanjal.example.microservices.CurrencyExchangeService.exception.CurrencyExchangeException;
 import com.dipanjal.example.microservices.CurrencyExchangeService.factory.CurrencyExchangeServiceFactory;
 import com.dipanjal.example.microservices.common.models.CurrencyExchange;
-import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
