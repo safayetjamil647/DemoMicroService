@@ -33,6 +33,9 @@
 		<spring-boot.version>2.5.1</spring-boot.version>
 		<spring-core.version>5.3.8</spring-core.version>
 		<spring-cloud.version>2020.0.3</spring-cloud.version>
+		<jaeger-cloud.version>3.1.2</jaeger-cloud.version>
+		<netflix-ribbon.version>2.2.6.RELEASE</netflix-ribbon.version>
+
 		<common-module.version>0.0.1</common-module.version>
 		<geoip2.version>2.8.0</geoip2.version>
 		<ipgeolocation.version>1.0.12</ipgeolocation.version>
@@ -60,6 +63,19 @@
 				<scope>test</scope>
 			</dependency>
 
+			<!--        Distributed tracing-->
+			<dependency>
+				<groupId>io.opentracing.contrib</groupId>
+				<artifactId>opentracing-spring-jaeger-cloud-starter</artifactId>
+				<version>${jaeger-cloud.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+				<version>${netflix-ribbon.version}</version>
+			</dependency>
+
 			<dependency>
 				<groupId>org.projectlombok</groupId>
 				<artifactId>lombok</artifactId>
@@ -76,6 +92,9 @@
 				<artifactId>ipgeolocation</artifactId>
 				<version>${ipgeolocation.version}</version>
 			</dependency>
+
+<!--			sentry logging-->
+
 
 
 			<dependency>
