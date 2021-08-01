@@ -19,7 +19,7 @@ public class ApiGatewayConfiguration {
                 .route(RouteDefinitions.ROUTE_GET)
                 .route(RouteDefinitions.ROUTE_CURRENCY_EXCHANGE)
                 .route(RouteDefinitions.ROUTE_CURRENCY_CONVERSION)
-                .route(RouteDefinitions.MAPPED_ROUTE_CURRENCY_CONVERSION_NEW)
+//                .route(RouteDefinitions.MAPPED_ROUTE_CURRENCY_CONVERSION_NEW)
                 .build();
     }
 }
