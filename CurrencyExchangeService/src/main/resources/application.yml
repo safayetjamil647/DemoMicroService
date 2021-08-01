@@ -12,6 +12,7 @@ spring:
   config:
     import: optional:configserver:http://localhost:8888
 
+
 eureka:
   client:
     serviceUrl:
@@ -43,3 +44,26 @@ resilience4j:
         failureRateThreshold: 50
         eventConsumerBufferSize: 10
 #        recordFailurePredicate: io.github.robwin.exception.RecordFailurePredicate
+
+#opentracing:
+#  jaeger:
+#    udp-sender:
+#      host: localhost
+#      port: 6831
+#    log-spans: true
+
+
+#logging:
+#  base-path: ./CurrencyExchangeService/logs
+#  file:
+#    name: ${logging.base-path}/info/${spring.application.name}.log
+#  pattern:
+#    console: "%cyan(%d{yyyy-MM-dd HH:mm:ss}) %gray([%thread]) %highlight(%-5level) %magenta(%logger{36}) - %msg%n"
+#    files: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+#  level:
+#    com.dipanjal.example.microservices: info
+#  logback:
+#    rollingpolicy:
+#      max-file-size: 1MB
+#      max-history: 7
+#      file-name-pattern: "${logging.base-path}/info/%d{yyyy-MM}/${spring.application.name}-log.%d{yyyy-MM-dd}.%i.log.gz"
