@@ -3,7 +3,7 @@ server:
 
 spring:
   profiles:
-    active: dev
+    active: ${ACTIVE_PROFILE:dev}
   cloud:
     config:
       profile: default

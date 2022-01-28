@@ -1,0 +1,72 @@
+version: "3.9"
+services:
+  naming-server:
+    container_name: naming-server-container
+    build:
+      context: ./NamingServer
+      dockerfile: Dockerfile
+    image: naming-server:latest
+    ports:
+      - 8761:8761
+    networks:
+      - common-net
+
+  api-gateway:
+    depends_on:
+      - naming-server
+    container_name: api-gateway-container
+    build:
+      context: ./ApiGateway
+      dockerfile: Dockerfile
+    image: api-gateway:latest
+    ports:
+      - 8765:8765
+    networks:
+      - common-net
+    environment:
+      EUREKA_URI: http://naming-server:8761/eureka
+  currency-conversion:
+    depends_on:
+      - api-gateway
+    container_name: currency-conversion-container
+    build:
+      context: ./CurrencyConversionService
+      dockerfile: Dockerfile
+    image: currency-conversion:latest
+    ports:
+      - 8100:8100
+    networks:
+      - common-net
+    environment:
+      EUREKA_URI: http://naming-server:8761/eureka
+  currency-exchange:
+    depends_on:
+      - api-gateway
+    container_name: currency-exchange-container
+    build:
+      context: ./CurrencyExchangeService
+      dockerfile: Dockerfile
+    image: currency-exchange:latest
+    ports:
+      - 8000:8000
+    networks:
+      - common-net
+    environment:
+      EUREKA_URI: http://naming-server:8761/eureka
+  geo-service:
+    depends_on:
+      - api-gateway
+    container_name: geo-location-service
+    build:
+      context: ./GeoLocationService
+      dockerfile: Dockerfile
+    image: geo-service:latest
+    ports:
+      - 8200:8200
+    networks:
+      - common-net
+    environment:
+      EUREKA_URI: http://naming-server:8761/eureka
+networks:
+  common-net:
+    external: true
