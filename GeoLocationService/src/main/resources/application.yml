@@ -40,3 +40,6 @@ resilience4j:
         failureRateThreshold: 50
         eventConsumerBufferSize: 10
 #        recordFailurePredicate: io.github.robwin.exception.RecordFailurePredicate
+geo-location:
+  api-key: ${API_KEY:6257e217ab5f4a5c9b2f42a55a6297f7}
+  fields: geo,time_zone,currency
