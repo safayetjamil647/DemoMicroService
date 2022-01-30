@@ -3,4 +3,7 @@ spring:
     config:
       server:
         git:
-          uri: file://C:/Users/BS-308/Documents/personal/Java/MicroService/DemoMicroServices/git-config-repo
+          uri: https://github.com/dipanjal/git-config-repo
+          default-label: main
+
+
