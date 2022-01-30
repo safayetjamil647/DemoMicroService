@@ -1,0 +1,1 @@
+mvn install:install-file -Dfile=HtmlunitScrapper-0.0.1-SNAPSHOT.jar -DgroupId=com.dipanjal.htmlunit -DartifactId=HtmlunitScrapper -Dversion=0.0.1-SNAPSHOT -Dpackaging=jar
