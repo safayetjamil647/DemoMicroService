@@ -1,6 +1,5 @@
 package com.dipanjal.example.microservices.geo.controller;
 
-import com.dipanjal.example.microservices.common.models.GeoIP;
 import com.dipanjal.example.microservices.geo.service.GeoLocationService;
 import io.ipgeolocation.api.Geolocation;
 import org.springframework.http.ResponseEntity;

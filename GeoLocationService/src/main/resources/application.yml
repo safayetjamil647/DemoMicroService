@@ -3,14 +3,20 @@ server:
 
 spring:
   profiles:
-    active: dev
+    active: ${ACTIVE_PROFILE:default}
   cloud:
     config:
       profile: default
+      fail-fast: true
+      retry:
+        initial-interval: 1200
+        multiplier: 1.5
+        max-attempts: 10000
+        max-interval: 1500
   application:
     name: geo-location
   config:
-    import: optional:configserver:http://localhost:8888
+    import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888}
 
 eureka:
   client:
