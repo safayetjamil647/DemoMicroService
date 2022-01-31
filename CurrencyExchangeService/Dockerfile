@@ -1,12 +1,13 @@
 FROM amazoncorretto:11-alpine-jdk
+
+#RUN apk add tcpdump
+#RUN apk add net-tools
+#RUN apk add iputils
+#RUN apk --no-cache add curl
+
 ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} CurrencyExchangeService-0.0.1-SNAPSHOT.jar
-RUN apk add tcpdump
-RUN apk add net-tools
-RUN apk add iputils
+ARG APP_DIR=/opt/app
+COPY ${JAR_FILE} ${APP_DIR}/application.jar
+WORKDIR ${APP_DIR}
 
-ENTRYPOINT ["java","-jar","/CurrencyExchangeService-0.0.1-SNAPSHOT.jar"]
-
-#docker build --tag=currency-exchange:latest .
-#
-##docker run -p 8100:8100 currency-exchange:latest
+ENTRYPOINT ["java", "-Dspring.profiles.active=${ACTIVE_PROFILE}", "-jar","application.jar"]
