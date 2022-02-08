@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Check the directory
       run:  pwd
-            cd NamingServer
+            cd DemoMicroService/NamingServer
             pwd
 #     - name: Build the Docker image
 #       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
