@@ -17,5 +17,5 @@ jobs:
     - name: Check the directory
       working-directory: ./NamingServer    
 
-      run: docker build . --file Dockerfile --tag NamingServer:latest
+      run: docker build . --file Dockerfile --tag naming-server:latest
         
