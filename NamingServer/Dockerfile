@@ -1,9 +1,7 @@
 FROM amazoncorretto:11-alpine-jdk
 ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} NamingServer-0.0.1-SNAPSHOT.jar
+ARG APP_DIR=/opt/app
+COPY ${JAR_FILE} ${APP_DIR}/application.jar
+WORKDIR ${APP_DIR}
 
-#RUN apk add tcpdump
-#RUN apk add net-tools
-#RUN apk add iputils
-
-ENTRYPOINT ["java","-jar","/NamingServer-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "application.jar"]
