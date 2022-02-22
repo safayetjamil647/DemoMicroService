@@ -9,7 +9,7 @@ services:
     build:
       context: ./NamingServer
       dockerfile: Dockerfile
-    image: naming-server:latest
+    image: dipanjalmaitra/naming-server:latest
     ports:
       - "8761:8761"
     networks:
@@ -20,13 +20,10 @@ services:
     build:
       context: ./ConfigServer
       dockerfile: Dockerfile
-    image: config-server:latest
+    image: dipanjalmaitra/config-server:latest
     ports:
       - "8888:8888"
-#    volumes:
-#      - ./git-config-repo:/opt/git-config-repo
     environment:
-#      GIT_REPO_URI: file:///opt/git-config-repo
       GIT_REPO_URI: https://github.com/dipanjal/git-config-repo
     networks:
       - common-net
@@ -38,7 +35,7 @@ services:
     build:
       context: ./ApiGateway
       dockerfile: Dockerfile
-    image: api-gateway:latest
+    image: dipanjalmaitra/api-gateway:latest
     ports:
       - "8765:8765"
     networks:
@@ -55,7 +52,7 @@ services:
     build:
       context: ./CurrencyExchangeService
       dockerfile: Dockerfile
-    image: currency-exchange:latest
+    image: dipanjalmaitra/currency-exchange:latest
     ports:
       - "8000:8000"
     networks:
@@ -75,7 +72,7 @@ services:
     build:
       context: ./CurrencyConversionService
       dockerfile: Dockerfile
-    image: currency-conversion:latest
+    image: dipanjalmaitra/currency-conversion:latest
     ports:
       - "8100:8100"
     networks:
@@ -93,7 +90,7 @@ services:
     build:
       context: ./GeoLocationService
       dockerfile: Dockerfile
-    image: geo-service:latest
+    image: dipanjalmaitra/geo-service:latest
     ports:
       - "8200:8200"
     networks:
